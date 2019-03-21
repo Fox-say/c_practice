@@ -62,13 +62,13 @@ int main(void){
         scanf("%d %d", &year, &month);
     }
 
-    //print_calendar(year, month);
+    print_calendar(year, month);
 
-    for(i = 1; i<13 ; i++){
-        print_calendar(year, i);
-    }
+//    for(i = 1; i<13 ; i++){
+//        print_calendar(year, i);
+//    }
 
-
+    getch();
     return 1;
 }
 
@@ -157,10 +157,10 @@ void print_calendar(int year, int month){
     firstday = total_days % 7 + 1;
     month_days = get_month_days(year, month);
 
-    printf("this month is:%d\n", month);
-    printf("the total days before this month is:%d\n", total_days);
-    printf("the firstady of this month is:%d\n", firstday);
-    printf("the days of this month is:%d\n", month_days);
+//    printf("this month is:%d\n", month);
+//    printf("the total days before this month is:%d\n", total_days);
+//    printf("the firstady of this month is:%d\n", firstday);
+//    printf("the days of this month is:%d\n", month_days);
 
     printf("______________________\n\n");
     printf("  7  1  2  3  4  5  6 \n");
@@ -171,9 +171,9 @@ void print_calendar(int year, int month){
     }
 
     for(j = month_days; j>0; j--){
-        printf("%3d" , n);
+        printf("%3d", n);
 
-        if( (n + firstday) % 7 == 0 )
+        if( ((n + firstday) % 7 == 0) && (j > 1))
             printf("\n");
         n++;
     }
